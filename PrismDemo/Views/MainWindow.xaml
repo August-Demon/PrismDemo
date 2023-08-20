@@ -1,0 +1,35 @@
+﻿<Window
+    x:Class="PrismDemo.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:PrismDemo.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:viewmodels="clr-namespace:PrismDemo.ViewModels" 
+    Width="600"
+    Height="400"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    WindowStartupLocation="CenterScreen">
+    <Grid >
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <local:StudentList Width="300" HorizontalAlignment="Left" />
+        <local:StudentForm Width="200" HorizontalAlignment="Right" />
+        --><!--<ContentControl prism:RegionManager.RegionName="ContentRegion" />--><!--
+
+        <TextBox
+            Grid.Row="1"
+            Margin="0,10,0,0"
+            IsReadOnly="True"
+            Text="{Binding Information}" />-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ContentControl Width="300" HorizontalAlignment="Left" Margin="10 0 0 0" prism:RegionManager.RegionName="ListRegion" />
+        <ContentControl Width="220" HorizontalAlignment="Right" Margin="0 0 10 0" prism:RegionManager.RegionName="FormRegion" />
+        <TextBox Grid.Row="1" Margin="10 5 10 5 "  IsReadOnly="True" Text="{Binding Information}"></TextBox>
+    </Grid>
+</Window>
